@@ -1,0 +1,6 @@
+-Trier les transactions
+-Pouvoir se connecter
+-Pouvoir se déconnecter
+-ajouter une transaction
+-Créer un compte bancaire
+-suprimmer un compte bancaire
