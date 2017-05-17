@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="appli" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ElementOverviewController">
+   <children>
+      <TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab closable="false" text="      Connexion      ">
+               <content>
+                  <SplitPane dividerPositions="0.2577777777777778" pickOnBounds="false" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="329.0">
+                           <children>
+                              <Button id="seConnecter" fx:id="seCo" layoutX="32.0" layoutY="273.0" mnemonicParsing="false" onAction="#seConnecter" onMouseClicked="#seConnecter" prefHeight="25.0" prefWidth="176.0" text="Se connecter" />
+                              <TextField id="login" fx:id="login" layoutX="34.0" layoutY="91.0" prefHeight="25.0" prefWidth="173.0" />
+                              <PasswordField id="password" fx:id="password" layoutX="34.0" layoutY="190.0" prefHeight="25.0" prefWidth="172.0" />
+                              <Text layoutX="95.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Text>
+                              <Text layoutX="84.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Text>
+                              <Button id="seDeco" fx:id="seDeco" layoutX="33.0" layoutY="323.0" mnemonicParsing="false" onAction="#seDeconnecter" onMouseClicked="#seDeconnecter" prefHeight="25.0" prefWidth="176.0" text="Se deconnecter" visible="false" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="571.0" fitWidth="805.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="file:/D:/DevPerso/Developpement/workspaceJava/JavaFxProject/src/data/background.png" />
+                                 </image>
+                              </ImageView>
+                              <Text layoutX="206.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur MyPersonalBank">
+                                 <font>
+                                    <Font name="Andalus" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="206.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MyPersonalBank, la gestion de tout vos comptes !">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+          <Tab id="gestionConsomation" fx:id="acceuil" closable="false" disable="true" text="      Accueil      ">
+               <content>
+                  <SplitPane dividerPositions="0.18, 0.3608" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Text fx:id="userName" layoutX="345.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="32.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGO" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Text layoutX="63.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Synthèse de vos comptes :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="687.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#addAccount" prefHeight="30.0" prefWidth="158.0" text="Ajouter un compte">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="selectBank" layoutX="436.0" layoutY="32.0" onMouseClicked="#loadListBank" prefWidth="150.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <ListView fx:id="listViewCompte" layoutX="51.0" layoutY="31.0" prefHeight="288.0" prefWidth="798.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+            <Tab fx:id="compte" closable="false" disable="true" text="      Compte      ">
+               <content>
+                  <SplitPane dividerPositions="0.18038528896672504, 0.4028021015761821" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Text layoutX="22.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="logo" />
+                              <Text layoutX="349.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[MON COMPTE]">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="793.0" layoutY="38.0" mnemonicParsing="false" text="Button à faire" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Effectuer une nouvelle transaction :">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="557.0" layoutY="47.0" mnemonicParsing="false" text="Nouvelle transaction" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="900.0">
+                           <children>
+                              <ListView layoutX="14.0" layoutY="14.0" prefHeight="266.0" prefWidth="872.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content></Tab>
+            <Tab fx:id="addCompte" closable="false" disable="true" text="Ajouter Compte">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="180.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du compte :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="367.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un compte" textAlignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="178.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero Compte :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="190.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Guichet :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="213.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clé RIB :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="190.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Banque :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="219.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IBAN :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="libelleCompte" layoutX="335.0" layoutY="121.0" prefHeight="25.0" prefWidth="393.0" />
+                        <TextField fx:id="cleRIB" layoutX="335.0" layoutY="375.0" prefHeight="25.0" prefWidth="393.0" />
+                        <TextField fx:id="numCompte" layoutX="335.0" layoutY="327.0" prefHeight="25.0" prefWidth="393.0" />
+                        <TextField fx:id="cdBanque" layoutX="335.0" layoutY="279.0" prefHeight="25.0" prefWidth="393.0" />
+                        <TextField fx:id="cdGuichet" layoutX="335.0" layoutY="226.0" prefHeight="25.0" prefWidth="393.0" />
+                        <TextField fx:id="cdInternational" layoutX="334.0" layoutY="425.0" prefHeight="25.0" prefWidth="393.0" />
+                        <Button fx:id="addAccountEND" layoutX="383.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#treatmentAccount" prefHeight="32.0" prefWidth="134.0" text="Ajouter ce compte" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
